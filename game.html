@@ -4,11 +4,12 @@
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<title>Contact</title>
+<title>Game</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="stylesheets/foundation.min.css">
 <link rel="stylesheet" href="stylesheets/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="javascripts/modernizr.foundation.js"></script>
 <!-- Google fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
@@ -34,44 +35,44 @@
                 <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
               </ul>
             </li>
-
+           
             <li ><a href="favourites.html">Favourites List</a></li>
             <li ><a href="pinterest-style.html">Login Page</a></li>
             <li ><a href="tiles.html">Tiles</a></li>
           </ul>
- 
+   
         </div>
       </div>
     </div>
     <!-- END Header -->
-    <div class="heading_dots hide-for-small" style="margin-bottom:0px">
-      <h1 class="heading_supersize"><span class="heading_center_bg">CONTACT US</span></h1>
-    </div>
-    <div class="row">
-      <div class="six columns">
-        <h3>Address</h3>
-        <p><strong>Abyss Home</strong></p>
-        <p>Telephone: +852 67339643<br>
-          E-mail: longheifong@gmail.com<br>
-		  Working Hours: never</p>
-		  
-        <!-- // MAILCHIMP SUBSCRIBE CODE \\ -->
-       
-        <!-- \\ MAILCHIMP SUBSCRIBE LINK // -->
-       
-          
-      </div>
-	  
-      <div class="six columns">
-        <h3>Where to find us</h3>
-<iframe width="400" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJscivXwsEBDQRw0PzwoNj5Ys&key=AIzaSyAJ8tuQF2EitMcev37a92KzPSkn-0tD8-0" allowfullscreen></iframe>
-        <br>
-		
-		
-		
-		
-       
-    </div>
+     <div class="heading_dots hide-for-small">
+      <h1 class="heading_supersize"><span class="heading_center_bg">Game</span></h1>
+    
+	</div>
+	
+	<iframe name="iframe_canvas" src="http://www.asiadog.com/game/action/884.shtm" scrolling="no" frameborder="0" width="840" height="780">
+</iframe>
+	<div ng-app="">
+	<input id="search" ng-model="name" type="text" maxlength="70"> </input>
+	<p style="margin: 6px 0">
+	
+	
+	This page is just for fun if you any think to tell me you can input here. I will not know /0\     :"{{name}}" 
+	</p>
+	
+	
+	</div>
+	<script src="https://apis.google.com/js/plusone.js">
+	
+</script>
+
+<div class="g-comments"
+    data-href="http://localhost:5432/game.html"
+    data-width="720"
+    data-first_party_property="BLOGGER"
+    data-view_type="FILTERED_POSTMOD">
+</div>
+	
     <div class="row">
       <div class="twelve columns">
         <ul id="menu3" class="footer_menu horizontal">
@@ -88,5 +89,9 @@
 <script src="javascripts/foundation.min.js"></script>
 <!-- Initialize JS Plugins -->
 <script src="javascripts/app.js"></script>
+
 </body>
+
+
+
 </html>
