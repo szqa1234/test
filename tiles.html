@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<title>Tiles</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="stylesheets/foundation.min.css">
+<link rel="stylesheet" href="stylesheets/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="javascripts/modernizr.foundation.js"></script>
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<div style="clear:both; height:25px"></div>
+<div class="two columns"> <a href="index.html"><img src="images/logo_small.png" alt="" style="border:none"></a>
+  <ul class="nav-bar vertical">
+    <li ><a href="index.html">Home</a></li>
+    <li class="has-flyout"> <a href="#">Example Pages</a><a href="#" class="flyout-toggle"></a>
+      <ul class="flyout">
+                <li class="has-flyout"><a href="search.html">Game</a></li>
+                <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
+              </ul>
+            </li>
+         
+            <li ><a href="favourites.html">Favourites List</a></li>
+            <li ><a href="pinterest-style.html">Login Page</a></li>
+  </ul>
+</div>
+<div style="position:relative;width:267px;height:25px;overflow:hidden;"> <div style="position:absolute;top:-276px;left:-5px"> <iframe width="300" height="300" src="https://www.youtube.com/embed/mHeK0Cwr9sg?rel=0"> </iframe> </div> </div>
+<!-- page wrap -->
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("container");
+    li = ul.getElementsByTagName("div");
+    for (i = 0; i < li.length; i++) {
+        if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+}
+</script>
+<div class="ten columns">
+  <!-- page wrap -->
+  <div id="container">
+    <div class='box_fluid col_fluid'> <a href="#"><img src='images/pin1.jpg' alt=""></a>
+      <div class='box_fluid_inner'>
+        <h4><strong> Arrange a Family Meeting for "The Talk"</strong></h4>
+        <p>This isn't a conversation that you can just bring up out of the blue one day over the phone with your parents and siblings—"So, mom, have you thought about moving to a nursing home?"—or during a holiday visit, when stress and family conflicts are already more likely to arise. It's better to plan a family meeting with your parents and siblings (if you're not an only child) and prepare for it by reassessing your own financial situation and feelings. (That could be the hardest part—getting through your own grief as you contemplate your parents' last years and no longer having them in your life. Have a box of tissues on hand.)</p>
+      </div>
+      <div class="box_comment">
+       
+      </div>
+      <div class="box_comment">
+	  
+	  <p style="margin: 6px 0"> <a id="Arrange_button" class="button radius">Love this!</a>
+	  
+      </div>
+      <div class="box_comment">
+       
+      </div>
+    </div>
+    <div class='box_fluid col_fluid'> <a href="#"><img src='images/pin2.jpg' alt=""></a>
+      <div class='box_fluid_inner'>
+       <h4><strong>Shelly Sun, CEO and Co-founder of BrightStar Care, offers these tips:</strong></h4>
+      <p>Have the conversation in person. Video chat, phone, or email won't provide you with honest emotions or feedback.
+Prepare questions in advance so you won't feel rushed or scrambling to get your thoughts together. (See below for some questions to ask.)
+During the conversation, provide undivided full attention so it won't seem like you're forcing an agenda.
+Write important points in a notebook to record details and to reference in the future.</p>
+      <div class="box_comment">
+        
+      </div>
+		<div class="box_comment">
+	  <p style="margin: 6px 0"> <a id="tips_button" class="button radius">Love this!</a>
+		</div>
+      <div class="box_comment">
+       
+      </div>
+    </div>
+    </div>
+    <div class='box_fluid col_fluid'> <a href="#"><img src='images/pin3.jpg' alt=""></a>
+      <div class='box_fluid_inner'>
+      <h4><strong>Find Out Your Parents' Needs and Wishes</strong></h4>
+      <p>During the discussion, find out what your parents' plans are, if they have any. Do they want to "age in-place" (stay in their own home) or move closer to one of their kids? Would it make more sense to move to a less expensive home—perhaps a senior independent living community (aka a retirement community) where they'll have more interaction with other seniors? Or would their needs be better served by an assisted living residence or a nursing home? (We'll explore these options in a minute.)</p>
+      <div class="box_comment">
+        
+      </div>
+      <div class="box_comment">
+	  <p style="margin: 6px 0"> <a id="need_button" class="button radius">Love this!</a>
+      </div>
+      <div class="box_comment">
+        
+      </div>
+    </div>
+    </div>
+   
+    
+    <div class='box_fluid col_fluid'> <a href="#"><img src='images/pin6.jpg' alt=""></a>
+      <div class='box_fluid_inner'>
+      <h4><strong>Weigh the Senior Care and Housing Options</strong></h4>
+      <p>Your parents might be quite independent today, but chances are one day they will need that long-term care (by one estimate, at least 70% of seniors will). There are several types of long-term care solutions, ranging from assisted living communities to in-home aid. Making the best choice depends on your parents' health needs, your resources, and your collective wishes.</p>
+      <div class="box_comment">
+      
+      </div>
+      <div class="box_comment">
+	  <p style="margin: 6px 0"> <a id="Options_button" class="button radius">Love this!</a>
+      </div>
+      <div class="box_comment">
+      
+      </div>
+    </div>
+	</div>
+    <div class='box_fluid col_fluid'> <a href="#"><img src='images/pin7.jpg' alt=""></a>
+      <div class='box_fluid_inner'>
+    <h4><strong>Assisted Living Communities </strong></h4>
+      <p>(aka Personal Care Homes) are designed for seniors who can no longer live safely on their own but who don't need around-the-clock medical care. Residents live in their own private apartments, and services provided include daily living assistance, medication help, meals in a shared dining room, and housekeeping. Some take Medicaid, but most are privately paid.</p>
+      <div class="box_comment">
+     
+      </div>
+      <div class="box_comment">
+	  <p style="margin: 6px 0"> <a id="Communities_button" class="button radius">Love this!</a>
+      </div>
+      <div class="box_comment">
+       
+      </div>
+    </div>
+    </div>
+    <div class='box_fluid col_fluid'> <a href="#"><img src='images/pin8.jpg' alt=""></a>
+      <div class='box_fluid_inner'>
+      <h4><strong>Nursing homes </strong></h4>
+      <p>provide seniors with a high level of medical care and are a better choice for those with complex medical conditions, since licensed nurses are available 24 hours a day. Long-term residents typically share a room (but private rooms are available) and eat together in a central dining room. Most people also pay out of pocket for nursing homes, but you might be eligible to get help from Medicaid for these (very high) expenses if you run out of money.</p>
+      <div class="box_comment">
+     
+      </div>
+      <div class="box_comment">
+	  <p style="margin: 6px 0"> <a id="Nursing_homes_button" class="button radius">Love this!</a>
+      </div>
+      <div class="box_comment">
+       
+      </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    </div>
+  </div>
+  <!-- end Masonry container -->
+  <div class="twelve columns">
+    <ul id="menu3" class="footer_menu horizontal">
+      <li ><a href="index.html">Home</a></li>
+    </ul>
+  </div>
+
+</div>
+<!-- end page wrap) -->
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/foundation.min.js"></script>
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+<!-- Masonry for galleries -->
+<script src="javascripts/masonry.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+// Receive message from server
+	var socket = io();
+	var thisname;
+	
+
+	// Receive message when login is successful
+    socket.on("login_successful", function(data) {
+	thisname =data.username;
+		myFunction();
+	});
+	
+
+
+	
+		
+	$(function() {
+		$("#Arrange_button").click(function(e) {
+			// A function for redirecting to login page
+			
+	if(thisname != null){	
+			var thisnames = 'http://rest.learncode.academy/api/'+thisname+'/friends';
+			
+			var object = "Arrange a Family Meeting for The Talk";
+
+			$.ajax({
+						type: 'Post',
+						url: thisnames,
+						data: {name: object},
+						success: function(data){
+						alert(data.name   + "in" + thisnames);
+						//window.location.reload(true);
+						}
+			});
+			}
+			else{
+			alert("Please Login Frist");
+			}
+		})
+	});
+	
+	$(function() {
+		$("#tips_button").click(function(e) {
+			// A function for redirecting to login page
+	
+	if(thisname != null){	
+	
+			var thisnames = 'http://rest.learncode.academy/api/'+thisname+'/friends';
+			
+			var object = "tips";
+
+			$.ajax({
+						type: 'Post',
+						url: thisnames,
+						data: {name: object},
+						success: function(data){
+						alert(data.name   + "in" + thisnames);
+						//window.location.reload(true);
+						}
+			});
+			
+			
+			}
+			else{
+			alert("Please Login Frist");
+			}
+		})
+	});
+	
+	
+	
+	$(function() {
+		$("#need_button").click(function(e) {
+			// A function for redirecting to login page
+	
+	if(thisname != null){	
+	
+	
+			var thisnames = 'http://rest.learncode.academy/api/'+thisname+'/friends';
+			
+			var object = "Needs and Wishes";
+
+			$.ajax({
+						type: 'Post',
+						url: thisnames,
+						data: {name: object},
+						success: function(data){
+						alert(data.name   + "in" + thisnames);
+						//window.location.reload(true);
+						}
+			});
+			
+			
+			}
+			else{
+			alert("Please Login Frist");
+			}
+			
+			
+		})
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	$(function() {
+		$("#Options_button").click(function(e) {
+			// A function for redirecting to login page
+	
+	if(thisname != null){	
+	
+	
+			var thisnames = 'http://rest.learncode.academy/api/'+thisname+'/friends';
+			
+			var object = "Housing Options";
+
+			$.ajax({
+						type: 'Post',
+						url: thisnames,
+						data: {name: object},
+						success: function(data){
+						alert(data.name   + "in" + thisnames);
+						//window.location.reload(true);
+						}
+			});
+			
+			}
+			else{
+			alert("Please Login Frist");
+			}
+			
+		})
+	});
+	
+	
+	
+	$(function() {
+		$("#Communities_button").click(function(e) {
+			// A function for redirecting to login page
+	
+	if(thisname != null){	
+	
+	
+			var thisnames = 'http://rest.learncode.academy/api/'+thisname+'/friends';
+			
+			var object = "Communities";
+
+			$.ajax({
+						type: 'Post',
+						url: thisnames,
+						data: {name: object},
+						success: function(data){
+						alert(data.name   + "in" + thisnames);
+						//window.location.reload(true);
+						}
+			});
+			
+			}
+			else{
+			alert("Please Login Frist");
+			}
+			
+		})
+	});
+	
+	
+	$(function() {
+		$("#Nursing_homes_button").click(function(e) {
+			// A function for redirecting to login page
+	
+	if(thisname != null){	
+	
+			var thisnames = 'http://rest.learncode.academy/api/'+thisname+'/friends';
+			
+			var object = "Nursing_homes";
+
+			$.ajax({
+						type: 'Post',
+						url: thisnames,
+						data: {name: object},
+						success: function(data){
+						alert(data.name   + "in" + thisnames);
+						//window.location.reload(true);
+						}
+			});
+			
+			
+			}
+			else{
+			alert("Please Login Frist");
+			}
+			
+		})
+	});
+	
+	
+	
+
+	
+	
+$(function () {
+    $('#container').masonry({
+        itemSelector: '.box_fluid',
+        // set columnWidth a fraction of the container width
+        columnWidth: function (containerWidth) {
+            return containerWidth / 3;
+            isResizable: true
+        }
+    });
+});
+</script>
+<!-- END Masonry -->
+</body>
+</html>

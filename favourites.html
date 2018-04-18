@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+<title>Favourites List</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="stylesheets/foundation.min.css">
+<link rel="stylesheet" href="stylesheets/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="javascripts/modernizr.foundation.js"></script>
+ <script>
+ /*
+ $(document).ready(function(){
+ setInterval(function(){cache_clear()},3000);
+ });
+ function cache_clear()
+{
+ window.location.reload(true);
+}*/
+</script>
+
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="row"> <a href="index.html"><img src="images/logo.png" alt="" style="border:none; margin-top:25px"></a> </div>
+<div class="row page_wrap" style="margin-top:-2px">
+  <!-- page wrap -->
+  <div class="twelve columns">
+    <!-- page wrap -->
+    <div class="row">
+      <div class="twelve columns header_nav" style="margin-bottom:0; box-shadow: none">
+        <div class="twelve columns">
+          <ul id="menu-header" class="nav-bar horizontal">
+            <li ><a href="index.html">Home</a></li>
+            <li class="has-flyout"> <a href="#">Example Pages</a><a href="#" class="flyout-toggle"></a>
+              <ul class="flyout">
+                <li class="has-flyout"><a href="search.html">Game</a></li>
+                <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
+              </ul>
+            </li>
+         
+            <li ><a href="favourites.html">Favourites List</a></li>
+            <li ><a href="pinterest-style.html">Login Page</a></li>
+            <li ><a href="tiles.html">Tiles</a></li>
+          </ul>
+          <!--<script>$('ul#menu-header').nav-bar();</script>-->
+        </div>
+      </div>
+    </div>
+    <!-- END Header -->
+    <div class="heading_dots hide-for-small">
+      <h1 class="heading_supersize"><span class="heading_center_bg">Favourites List</span></h1>
+		
+	</div>
+	
+	<div>
+		<h1><a id="isLogedin"></a><a id="isLogedin2"></a><a id="isLogedin3"></a></h1>
+
+		<input id="Get" type="submit" value="Search-Get" class="register-button">
+		<input id="Post" type="submit" value="Add-Post" class="register-button">
+
+		<input id="Delete" type="submit" value="Search-DELETE" class="register-button">
+		
+		
+		<input type="text" placeholder="Input"  id="username"  />
+
+	</div>
+
+	<ul id="orders" ></ul>
+    <!-- end Masonry container -->
+    <div class="twelve columns">
+      <ul id="menu3" class="footer_menu horizontal">
+        <li ><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+    <!--<script>$('ul#menu3').nav-bar();</script>-->
+  </div>
+</div>
+<!-- end page wrap) -->
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/foundation.min.js"></script>
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+<!-- Masonry for galleries -->
+<script src="javascripts/masonry.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var thisname ="";
+
+
+
+
+	var login = false;
+	// Receive message from server
+	var socket = io();
+	// Receive message when login is successful
+
+	
+    socket.on("login_successful", function(data) {
+	login = false;
+
+	thisname =data.username;
+    document.getElementById('isLogedin').innerHTML = "Welcome ! ";
+	document.getElementById('isLogedin2').innerHTML = data.username;
+	document.getElementById('isLogedin3').innerHTML = ", This is your favorlist";
+	
+});
+
+
+    socket.on("logout_successful", function(data) {
+	window.location ="/index.html";
+	if(login ==false){
+	alert("Please Logn In and try it again");
+	login = true;
+	}
+});
+
+
+
+
+
+
+	$(function(){
+	
+	
+	
+	
+		$("#Get").click(function(e) {
+			// A function for redirecting to login page
+			var check = false;
+			var check2 ="";
+			var thisnames = 'http://rest.learncode.academy/api/'+thisname+'/friends';
+			var $orders = $('#orders');
+			//var object = document.getElementById('username').value;
+
+	$.ajax({
+		type: 'GET',
+		url: thisnames,
+		success: function(data) {
+			console.log(data);
+			
+			if(data == ""){ 
+			$('#orders').empty();
+			$orders.append("No any favourites data Found") };
+			
+			$.each(data,function(i,data){
+			
+			
+			
+			
+			
+			
+			if(document.getElementById('username').value == ""){
+			$orders.append('<li>Favourites : '+ data.name + ' ID : ' +data.id +'        The Detail information you can visit  http://localhost:5432/tiles.html  '+'</li>');
+			check = true;
+			
+			
+			}
+			else{
+			if(document.getElementById('username').value != ""){
+			$('#orders').empty();
+
+			if(data.name.match(document.getElementById('username').value)){
+			$('#orders').empty();
+			alert("Data Found!");
+			$orders.append('<li>Favourites : '+ data.name + ' ID : ' +data.id +'</li>');
+			
+			}
+						else
+			{
+			check2 = '<li>'+ document.getElementById('username').value+' not fousssnd!!!</li>';
+			$orders.html(check2);
+			}
+			}}
+			
+});		
+			}
+		});
+
+
+		
+		
+		
+	});
+});
+
+
+	$(function(){
+		$("#Post").click(function(e) {
+			// A function for redirecting to login page
+			var $orders = $('#orders');
+			
+			var thisnames = 'http://rest.learncode.academy/api/'+thisname+'/friends';
+			
+			var object = document.getElementById('username').value;
+			
+
+	$.ajax({
+		type: 'Post',
+		url: thisnames,
+		data: {name: object},
+		success: function(data) {window.location.reload(true);
+		}
+	});
+	})
+	
+}
+);
+
+
+	$(function(){
+		$("#Delete").click(function(e) {
+			// A function for redirecting to login page
+			
+			
+$.ajax({
+  type: 'Delete',
+  url: 'http://rest.learncode.academy/api/'+thisname+'/friends/' + document.getElementById('username').value ,
+  success: function() {
+    //no data...just a success (200) status code
+	alert( document.getElementById('username').value);
+	
+
+    
+  }
+
+});
+$('#orders').empty();
+alert("Data Delete Success");
+	})
+});
+
+
+
+
+</script>
+<!-- END Masonry -->
+</body>
+</html>

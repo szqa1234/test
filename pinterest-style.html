@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<title>Login Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="stylesheets/foundation.min.css">
+<link rel="stylesheet" href="stylesheets/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="javascripts/modernizr.foundation.js"></script>
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="twelve columns header_nav_fullwidth"> <a href="index.html"><img src="images/logo_black.png" alt="" style="border:none; margin:0 15px 7px"></a>
+  <div class="ten columns">
+    <ul id="menu-header" class="nav-bar horizontal">
+      <li ><a href="index.html">Home</a></li>
+      <li class="has-flyout"> <a href="#">Example Pages</a><a href="#" class="flyout-toggle"></a>
+        <ul class="flyout">
+                <li class="has-flyout"><a href="search.html">Game</a></li>
+                <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
+              </ul>
+            </li>
+     
+            <li ><a href="favourites.html">Favourites List</a></li>
+            <li ><a href="pinterest-style.html">Login Page</a></li>
+            <li ><a href="tiles.html">Tiles</a></li>
+    </ul>
+  
+  </div>
+  
+  <div id="div1" class="two columns">
+  
+    <p style="margin: 6px 0"> <a href="signup.html" class="button radius">Sign up!</a>
+	<a href="login.html" class="button secondary radius">Log in</a> </p>
+  </div>
+  
+  <div id="div2" class="two columns">
+  
+    <p style="margin: 6px 0"> <a id="signout" href="signout.html" class="button radius">Log Out</a>
+  </div>
+  
+</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UKABGy_pkn0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i7gW_S1tLhY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/02Rs7UWho9U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4_36hb-Eo2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<script src="https://apis.google.com/js/plusone.js">{lang: 'zh-TW'}</script>
+	<div class="g-comments"
+    data-href="file:///C:/Users/student/Desktop/Assignment/Assignment/pinterest-style.html"
+    data-width="642"
+    data-first_party_property="BLOGGER"
+    data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+<!-- END Header -->
+<div style="clear: both"></div>
+<!-- page wrap -->
+
+<!-- end page wrap) -->
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/foundation.min.js"></script>
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+<!-- Masonry for galleries -->
+<script src="javascripts/masonry.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+
+// Receive message from server
+	var socket = io();
+	var thisname ="";
+	// Receive message when login is successful
+    socket.on("login_successful", function(data) {
+	thisname =data.username;
+		myFunction();
+	});
+	
+
+
+
+
+		$(function() {
+		$("#signout").click(function(e) {
+		alert("click");
+			$(function() {
+				var user = {};
+				user.action="signout";
+				$.ajax( {
+					url: "http://localhost:5432/pinterest-style.html",
+					type: "POST",
+					data: user
+				});
+				alert("Log Out");
+				return false;
+			});
+		});
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+$(document).ready(function() {
+    var x = document.getElementById('div1');
+        x.style.display = 'block';
+	var y = document.getElementById('div2');
+        y.style.display = 'none';
+});
+
+
+function myFunction() {
+    var x = document.getElementById('div1');
+        x.style.display = 'none';
+		
+    var y = document.getElementById('div2');
+
+        y.style.display = 'block';
+
+}
+
+
+	
+
+$(function () {
+    var $container = $('#container');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+</script>
+<!-- END Masonry -->
+</body>
+</html>

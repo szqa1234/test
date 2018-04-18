@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<header class="ccheader">
+		<meta charset="UTF-8">
+		<title>Login</title>
+        <h1>Login</h1>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="css/style2.css" rel="stylesheet" type="text/css">
+	</head>
+<body>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    
+    	<div class="container">
+		<section id="content">
+			<form name="form">
+				
+   				<div class="ccfield-prepend">
+        			<span class="ccform-addon"><i class="fa fa-user fa-2x"></i></span>
+       				 <input type="text" placeholder="Username" required id="username" class="ccformfield" />
+        
+    			</div>
+
+
+
+    			<div class="ccfield-prepend">
+        			<span class="ccform-addon"><i class="fa fa-key fa-2x"></i></span>
+        				<input class="ccformfield" type="password" placeholder="Password" required id="pass">
+    			</div>
+				<div>
+					<input id="submit" type="submit" value="Log in" />
+				</div>
+			</form><!-- form -->
+		</section><!-- content -->
+	</div><!-- container -->
+    
+    
+    
+    
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	// Receive message from server
+	var socket = io();
+	// Receive message when login is successful
+    socket.on("login_successful", function(data) {
+		alert("???");
+		window.location = "/index.html";
+	});
+	
+	// Receive message when login is failed
+	socket.on("login_failed", function(data) {
+		
+		alert("Login failed.\nUser name or password maybe incorrect. ");
+	});
+	
+	
+	
+	
+	
+	
+	
+	$(function() {
+		$("#submit").click(function(e) {
+			$(function() {
+				var user = {};
+				user.username = $("#username").val();
+				user.pass = $("#pass").val();
+				alert(user.username);
+				alert(user.pass);
+				$.ajax( {
+					url: "http://localhost:5432/login.html",
+					type: "POST",
+					data: user
+				});
+				return false;
+			});
+		});
+	});
+</script>
+</html>

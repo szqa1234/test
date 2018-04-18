@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en">
+<link href="css/style2.css" rel="stylesheet" type="text/css">
+ <!--<![endif]-->
+	<header class="ccheader">
+		<meta charset="UTF-8">
+		<title>Sign up</title>
+        <h1>Sign up</h1>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="css/style2.css" rel="stylesheet" type="text/css">
+	</head>
+<body ng-app="myApp" ng-controller="personCtrl"  >
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <h1 class="register-title">Welcome</h1>
+  <form id="signup" class="register">
+    
+
+	  <i class="fa fa-female fa-2x"></i>
+      <input type="radio" name="gender" value="S" id="sex_s" class="register-switch-input" checked>
+      <label for="sex_s" class="register-switch-label">Secret</label>
+	
+	  <i class="fa fa-female fa-2x"></i>
+      <input type="radio" name="gender" value="F" id="sex_f" class="register-switch-input">
+      <label for="sex_f" class="register-switch-label">Female</label>
+	  
+      <i class="fa fa-male fa-2x"></i>
+      <input type="radio" name="gender" value="M" id="sex_m" class="register-switch-input">
+      <label for="sex_m" class="register-switch-label">Male</label>
+
+
+    <input id="submit" type="submit" value="Create Account" class="register-button">
+	<input id="cancel" type="submit" value="Cancel" class="register-button">
+  </form>
+  
+  
+  
+  
+  
+      	<div class="container">
+		<section id="content">
+			<form name="form">
+				
+   				<div class="ccfield-prepend">
+        			<span class="ccform-addon"><i class="fa fa-user fa-2x"></i> </span>
+       				 <input type="text"  placeholder="Username"  required id="username" class="ccformfield" />
+    			</div> 
+
+    			<div class="ccfield-prepend">
+        			<span class="ccform-addon"><i class="fa fa-key fa-2x"></i></span>
+        				<input class="ccformfield"  type="password" placeholder="Password"  required id="pass">
+    			</div>
+				
+				
+				<div class="ccfield-prepend">
+					<span class="ccform-addon"><i class="fa fa-envelope fa-2x"></i></span>
+						<input class="ccformfield" type="email" name="email" ng-model="myInput"   placeholder="Email"  required id="email">	
+                {{check()}}
+   				 <div class="ccfield-prepend">
+      				  <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+      					 <input class="ccformfield" type="text" placeholder="Phone" id="phone">
+   				</div>
+				
+   				<div class="ccfield-prepend">
+                
+        			<span class="ccform-addon">
+                    <i class="fa fa-skype fa-2x"></i>
+                    </span>
+       				 <input type="text" placeholder="Skype" required id="skype" class="ccformfield" />
+    			</div>   
+			</form><!-- form -->
+		</section><!-- content -->
+	</div><!-- container -->
+	
+
+
+</div>
+	
+	
+          
+</body>
+<script>
+
+
+
+
+
+
+
+
+var app = angular.module('myApp', []);
+app.controller('personCtrl', function($scope) {
+    $scope.invalid = "Email is Invalid "
+    $scope.valid = "Email is OK ";
+    $scope.check =  	function () {
+    var x = document.forms["form"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        return $scope.invalid;
+		}
+		return $scope.valid;
+	}
+});
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	$(function() {
+	
+	
+	
+	
+	
+	
+	
+	
+		$("#submit").click(function(e) {
+			// A function for redirecting to login page
+			$(function() {
+				var user = {};
+				user.gender = $("input[name='gender']:checked").val();
+				user.username = $("#username").val();
+				user.pass = $("#pass").val();
+				user.email = $("#email").val();
+				user.phone = $("#phone").val();
+				user.skype = $("#skype").val();
+				
+				
+				if(valinameForm()==true){
+					if(valipassForm()==true){
+						if(validateForm()==true){
+						$.ajax( {
+						url: "http://localhost:5432/login.html",
+						type: "POST",
+						data: user
+						
+					});
+					window.location.assign("http://localhost:5432/")
+					alert("user password:" +user.pass);
+						}
+					}
+				}
+				
+				return false;
+			});
+		});
+	});
+
+	
+	function valinameForm(){
+    var nameRegex = /^[a-zA-Z0-9]+$/;
+    var validfirstUsername = document.forms["form"]["username"].value.match(nameRegex);
+
+    if(validfirstUsername == null){
+        alert("Your username is not valid. Only characters A-Z, a-z and '-' are  acceptable.");
+		alert("return to index");
+		alert("please try it again");
+		
+        return false;
+    }
+return true;
+}
+	
+	function valipassForm(){
+    var nameRegex = /^[a-zA-Z0-9]+$/;
+    var validfirstUsername = document.forms["form"]["pass"].value.match(nameRegex);
+
+    if(validfirstUsername == null){
+        alert("Your password is not valid. Only characters A-Z, a-z and '-' are  acceptable.");
+		alert("return to index");
+		alert("please try it again");
+		
+        return false;
+    }
+return true;
+}
+	
+	
+	function validateForm() {
+    var x = document.forms["form"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+		alert("return to index");
+		alert("please try it again");
+		
+        return false;
+		}
+		return true;
+	}
+</script>
+</html>

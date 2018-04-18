@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+<title>CARING SENIOR</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="stylesheets/foundation.min.css">
+<link rel="stylesheet" href="stylesheets/main.css">
+<link rel="stylesheet" href="stylesheets/play.css">
+<script src="javascripts/modernizr.foundation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<div class="row"> <a href="index.html"><img src="images/logo.png" alt="" style="border:none; margin-top:25px"></a> </div>
+<div class="row page_wrap" style="margin-top:-2px">
+  <!-- page wrap -->
+  <div class="twelve columns">
+    <!-- page wrap -->
+    <div class="row">
+      <div class="twelve columns header_nav" style="margin-bottom:0; box-shadow: none">
+        <div class="twelve columns">
+          <ul id="menu-header" class="nav-bar horizontal">
+            <li><a href="index.html">Home</a></li>
+            <li class="has-flyout"> <a href="#">Example Pages</a><a href="#" class="flyout-toggle"></a>
+              <ul class="flyout">
+                <li class="has-flyout"><a href="search.html">Game</a></li>
+                <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
+              </ul>
+            </li>
+           
+            <li ><a href="favourites.html">Favourites List</a></li>
+            <li ><a href="pinterest-style.html">Login Page</a></li>
+            <li ><a href="tiles.html">Tiles</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!-- END Header -->
+    <div class="show-for-large-up">
+      <!-- Slider -->
+      <div class="row">
+        <div id="featured"><img src="images/demo1.jpg" alt=""> <img src="images/demo2.jpg" alt=""> <img src="images/demo3.jpg" alt=""></div>
+      </div>
+    </div>
+    <!-- END Slider -->
+
+    <div class="row">
+      <div class="heading_dots hide-for-small">
+        <h1 class="heading_supersize"><span class="heading_center_bg">Caring Senior!</span></h1>
+      </div>
+      <div class="twelve columns">
+        <p class="welcome_text">This website is talking about the imformation of caring senior</p>
+		
+		
+		
+
+		
+ 
+		
+      </div>
+    </div>
+    <div class="row">
+      <div class="heading_dots hide-for-small" style="margin-bottom:25px">
+        <h1 class="heading_supersize"><span class="heading_center_bg" id="newone">What it mean Senior</span></h1>
+      </div>
+      <div class="four columns"> <img src="images/demo2_small.jpg" alt="">
+        <h3>Adjective</h3>
+        <p><em>Older or elder (designating the older of two men bearing the same name, as a father whose son is named after him, often written as Sr. or sr. following the name): I'd like to speak with the senior Mr. Hansen, please.
+I'm privileged to introduce Mr. Edward Andrew Hansen, Sr.
+Compare junior (def 1).</em></p>
+      </div>
+      <div class="four columns"> <img src="images/demo1_small.jpg" alt="">
+        <h3>noun</h3>
+        <p><em>A person of higher rank or standing than another, especially by virtue of longer service.</em></p>
+      </div>
+      <div class="four columns"> <img src="images/demo3_small.jpg" alt="">
+        <h3>Adjective</h3>
+        <p><em>(in certain American colleges and universities) of or relating to the final two years of education, during which a student specializes in a certain field of study.</em></p>
+      </div>
+    </div>
+    <!-- end row -->
+    <div class="row">
+      <div class="heading_dots hide-for-small">
+        <h1 class="heading_supersize"><span class="heading_center_bg">So what they need</span></h1>
+      </div>
+      <div class="three columns">
+        <h3>Who needs in-home care? </h3>
+        <p> Individuals who need help living independently at home rather than being institutionalized or living with relatives. Other cases involve seniors whose family caregivers need respite or time off from care responsibilities.</p>
+      </div>
+      <div class="three columns">
+        <h3>How does in-home care cost compare to assisted-living or nursing homes? </h3>
+        <p> In many cases, in-home care will cost less than assisted-living facilities or nursing homes. We can create a service plan that specifically meets the needs of your loved one. For example, a combination of caregiver service and home safety products can provide a cost-effective alternative to relocation.</p>
+      </div>
+      <div class="three columns">
+        <h3>Do you provide care in facilities also</h3>
+        <p> Absolutely. We can provide care in hospitals, assisted living facilities, nursing homes, long-term rehabilitation facilities and other places.</p>
+      </div>
+      <div class="three columns">
+        <h3>What if my caregiver is sick or goes on vacation? </h3>
+        <p> We use a team concept when providing care so our clients are better prepared in the event of a caregiver vacation or illness.</p>
+      </div>
+    </div>
+    <!-- end row -->
+	
+    <div class="row">
+      <div class="twelve columns">
+        <ul id="menu3" class="footer_menu horizontal">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+
+
+	var socket = io();
+	socket.on("login_failed", function(data) {
+		
+		alert("Login failed.\nUser name or password maybe incorrect. ");
+		
+	});
+	
+
+	
+	
+
+	
+	
+	
+</script>
+<!-- end page wrap) -->
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/foundation.min.js"></script>
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+</body>
+</html>
