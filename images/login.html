@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+        
+        <link rel="stylesheet" href="stylesheets/style2.css" type="text/css" media="all" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	</head>
+<body>
+
+<form>
+  <input checked id="signin" name="action" type="radio" value="signin">
+  <label for="signin">Sign in</label>
+  
+  
+  <input id="signup" name="action" type="radio" value="signup">
+  <label for="signup">Sign up</label>
+  
+  
+  <input id="reset" name="action" type="radio" value="reset">
+  <label for="reset">Reset</label>
+  
+  
+  <div id="wrapper">
+    <div id="arrow"></div>
+    <input type="text" placeholder="Username" required id="username" />
+    <input type="password" placeholder="Password" required id="password" />
+    <input id="repass" placeholder="Repeat password" type="password">
+  </div>
+  <button type="submit">
+    <span>
+      Reset password
+      <br>
+      Sign in
+      <br>
+      Sign up
+    </span>
+  </button>
+</form>
+<div id='hint'>Click on the tabs</div>
+
+</body>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	// Receive message from server
+	var socket = io();
+	
+	
+	// Receive message when login is successful
+    socket.on("login_successful", function(data) {
+		window.location = "/index.html";
+	});
+	
+	// Receive message when login is failed
+	socket.on("login_failed", function(data) {
+		alert("Login failed.\nUser name or password maybe incorrect. ");
+	});
+	
+	
+	$(function() {
+		$("#submit").click(function(e) {
+			// A function for redirecting to login page
+			$(function() {
+				var user = {};
+				user.gender = $("input[name='gender']:checked").val();
+				user.username = $("#username").val();
+				user.email = $("#email").val();
+				user.password = $("#password").val();
+				if (user.username == "" || user.email == "" || user.password == "") {
+					alert("You must enter all information. ");
+				} else {
+					$.ajax( {
+						url: "http://localhost:5000/login.html",
+						type: "POST",
+						data: user
+					});
+				}
+				return false;
+			});
+		});
+	});
+
+
+
+	
+
+	
+	$(function() {
+		$("#submit").click(function(e) {
+			$(function() {
+				var user = {};
+				user.username = $("#username").val();
+				user.password = $("#password").val();
+				$.ajax( {
+					url: "http://localhost:5000/login.html",
+					type: "POST",
+					data: user
+				});
+				return false;
+			});
+		});
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+	  if (e.type === 'keyup') {
+			if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+    	if( $this.val() === '' ) {
+    		label.removeClass('active highlight'); 
+			} else {
+		    label.removeClass('highlight');   
+			}   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+    		label.removeClass('highlight'); 
+			} 
+      else if( $this.val() !== '' ) {
+		    label.addClass('highlight');
+			}
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+
+
+</html>
