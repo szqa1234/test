@@ -1,0 +1,152 @@
+Fong Long Hei 177370075	
+		
+Youtube :
+
+Github  :https://github.com/szqa1234/test
+
+
+
+User Registration
+
+URL: http://localhost:5432/signup.html
+
+Method                                       Post
+
+Data{
+                                    "username":"yourmane"
+                                    "password":"yourpassword"
+                                    "e-mail"  :"youremail"
+                                    "phone"   : "yourphone"}
+Result{                         
+                                      "user password":""Signup success"
+
+}
+
+Error{                   "Your username is not valid. Only characters A-Z, a-z and '-' are  acceptable."
+                             "Not a valid e-mail address"
+                             "return to index"
+                              "please try it again"
+
+
+}
+
+
+User Registration
+
+URL: http://localhost:5432/login.html
+
+Method                                       Post
+
+Data{
+                                    "username":"yourmane"
+                                    "password":"yourpassword"
+                                    }
+Result{                         
+                                      "login_successful"
+
+}
+
+Error{                   ""Login failed.\nUser name or password maybe incorrect. "
+
+
+}
+
+
+Favourites List
+
+URL: http://localhost:5432/favouritse.html
+
+Method                                       Get
+
+
+Data{                                        Inputes data,Using api "http://rest.learncode.academy/api/"}
+
+Result{                                      if {input= null and no data get}
+                                                nothing to show
+                                             if {input= null and data get}
+                                                show data and "http://rest.learncode.academy/api/" data
+                                             if {input and no data get}
+                                                 show input and "http://rest.learncode.academy/api/" data
+                                             if {input and data get}
+                                                 show input and "http://rest.learncode.academy/api/" data
+                                                 show data and "http://rest.learncode.academy/api/" data
+                                               }
+Error{                                         Favourites not found!!!
+
+
+}
+
+contact page 
+
+URL: http://localhost:5432/contact.html
+
+Use Google api
+https://www.google.com/maps/embed/v1/place?q=place_id:ChIJscivXwsEBDQRw0PzwoNj5Ys&key=AIzaSyAJ8tuQF2EitMcev37a92KzPSkn-0tD8-0
+
+Google Map API
+
+key=AIzaSyAJ8tuQF2EitMcev37a92KzPSkn-0tD8-0
+
+place_id:ChIJscivXwsEBDQRw0PzwoNj5Ys
+
+Method                                       Get
+
+Data	  {                                  place_id:ChIJscivXwsEBDQRw0PzwoNj5Ys
+                                             key=AIzaSyAJ8tuQF2EitMcev37a92KzPSkn-0tD8-0
+                                                                                                  }
+
+Result	{      https://www.google.com/maps/embed/v1/place?q=place_id:ChIJscivXwsEBDQRw0PzwoNj5Ys&key=AIzaSyAJ8tuQF2EitMcev37a92KzPSkn-0tD8-0 }
+
+
+Error	{
+	alert(error); or alert(error kery); or alert(expried);
+		
+}
+
+Login Page
+
+URL: http://localhost:5432/pinterest-style.html
+
+youtube api: https://apis.google.com/js/plusone.js
+
+Data	  {                                  <iframe width="560" height="315" src="https://www.youtube.com/embed/UKABGy_pkn0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                                                                  }
+
+Result	{      https://www.youtube.com/embed/UKABGy_pkn0 }
+
+
+Error	{
+	nothing to play
+		
+}
+
+
+
+Game
+
+URL: http://localhost:5432/game.html
+
+Game api:<iframe name="iframe_canvas" src="http://www.asiadog.com/game/action/884.shtm" scrolling="no" frameborder="0" width="840" height="780">
+</iframe>
+	<div ng-app="">
+	<input id="search" ng-model="name" type="text" maxlength="70"> </input>
+	<p style="margin: 6px 0">
+
+
+
+googleplusapi: https://apis.google.com/js/plusone.js
+
+<div class="g-comments"
+    data-href="http://localhost:5432/game.html"
+    data-width="720"
+    data-first_party_property="BLOGGER"
+    data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+
+                                             
+
+
+
+                                
